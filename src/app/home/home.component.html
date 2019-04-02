@@ -1,0 +1,65 @@
+﻿<div [@routerTransition] class="padding-all backcolor1 sec">
+    <div class="block-header">
+        <div class="block-header-fl-l">
+            <h2>{{"CustomerInfor"|localize }}</h2>
+        </div>
+        <div class="block-header-add">
+            <a href="#add-customers" [routerLink]="['../add-customers']">
+                <h5>{{"AddCustomer"|localize }}</h5>
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+    </div>
+    <div class="seccont backcolor2 ">
+      <div class="mat-elevation-z8 data-table">
+        <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+      
+          <!-- Id Column -->
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{"ID"|localize }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+          </ng-container>
+      
+          <!-- Company Column -->
+          <ng-container matColumnDef="company">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{"Company"|localize }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.company}}</mat-cell>
+          </ng-container>
+      
+          <!-- Customer Column -->
+          <ng-container matColumnDef="customer">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{"Customer"|localize }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.customer}}</mat-cell>
+          </ng-container>
+      
+          <!-- Department Column -->
+          <ng-container matColumnDef="department">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{"Department"|localize }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.department}}</mat-cell>
+          </ng-container>
+      
+          <!-- Phone Column -->
+          <ng-container matColumnDef="phone">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{"Phone"|localize }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.phone}}</mat-cell>
+          </ng-container>
+      
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{"Email"|localize }}</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      
+        <mat-paginator #paginator
+          [length]="dataSource.data.length"
+          [pageIndex]="0"
+          [pageSize]="5"
+          [pageSizeOptions]="[1, 5, 10, 25, 50, 100, 250]">
+        </mat-paginator>
+      </div>
+    </div>
+</div>

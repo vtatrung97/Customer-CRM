@@ -1,0 +1,80 @@
+<div [@routerTransition] class="padding-all backcolor1 sec">
+    <div class="block-header">
+        <div class="block-header-fl-l">
+            <h2>{{"AddCustomer"|localize }}</h2>
+        </div>
+        <!-- <div class="block-header-add">
+            <a href="#add-customers" [routerLink]="['../add-customers']">
+                <h5>{{"AddCustomer"|localize }}</h5>
+                <i class="material-icons">add</i>
+            </a>
+        </div> -->
+    </div>
+    <div class="addcustomers backcolor2 seccont">
+      <div class="col-md-12">
+        <div class="addcustomers-img">
+          <div class="col-md-4 padding-tlr">
+            <div class=""></div>
+            <div class="addcustomers-img-defaul">
+              <img src="assets/images/logo-150.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="addcustomers-input">
+          <div class="col-md-8 padding-tlr padding-t3">
+              <div class="example-container">
+                  <mat-form-field>
+                    <input matInput placeholder="{{'NameCustomer'|localize }}" class="cl2">
+                  </mat-form-field>
+                
+                  <mat-form-field>
+                    <input matInput placeholder="{{'PhoneNumber'|localize }}" class="cl2">
+                  </mat-form-field>
+                
+                  <mat-form-field>
+                    <input matInput placeholder="{{'FaxNumber'|localize }}" class="cl2">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="{{'Email'|localize }}" class="cl2">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="{{'Address'|localize }}" class="cl2">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="{{'Company'|localize }}" class="cl2">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="{{'Position'|localize }}" class="cl2">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="{{'Department'|localize }}" class="cl2">
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="addcustomers-button">
+          <div class="addcustomers-save padding-lr05 fl-r cursorpointer">
+            <button mat-raised-button (click)="openDialog()"
+            matTooltip="Save"
+            aria-label="Button that displays a tooltip when focused or hovered over">
+            Save
+            </button>
+          </div>
+          <div class="addcustomers-delete padding-lr05 fl-r cursorpointer">
+            <button mat-raised-button (click)="reset()"
+            matTooltip="Delete"
+            aria-label="Button that displays a tooltip when focused or hovered over">
+            Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
