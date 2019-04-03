@@ -47,6 +47,9 @@ import { CustomersDetailComponent } from './customers-detail/customers-detail.co
 // dialog
 import { AddCustomersComponent } from './add-customers/add-customers.component';
 import { DialogOverviewExampleDialog } from './add-customers/add-customers.component';
+import { CustomersComponent } from './customer/customer.component';
+import { CreateCustomerDialogComponent } from './customer/create-customer/create-customer-dialog.component';
+import { EditCustomerDialogComponent } from './customer/edit-customer/edit-customer-dialog.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +83,9 @@ import { DialogOverviewExampleDialog } from './add-customers/add-customers.compo
     DataTableComponent,
     CustomersDetailComponent,
     [AddCustomersComponent, DialogOverviewExampleDialog],
+    CustomersComponent,
+    CreateCustomerDialogComponent,
+    EditCustomerDialogComponent
   ],
   imports: [
     CommonModule,
@@ -94,7 +100,9 @@ import { DialogOverviewExampleDialog } from './add-customers/add-customers.compo
     SharedModule,
     NgxPaginationModule,
     // do
-    AgGridModule.withComponents([null])
+    AgGridModule.withComponents([null]),
+    // validate
+    ReactiveFormsModule
   ],
   providers: [],
   entryComponents: [
@@ -108,7 +116,10 @@ import { DialogOverviewExampleDialog } from './add-customers/add-customers.compo
     CreateUserDialogComponent,
     EditUserDialogComponent,
     ResetPasswordDialogComponent,
-    // do
+    // customer
+    CreateCustomerDialogComponent,
+    EditCustomerDialogComponent,
+    // agrid
     [AddCustomersComponent, DialogOverviewExampleDialog]
   ]
 })

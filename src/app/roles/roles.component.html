@@ -50,11 +50,6 @@
                             <th>{{ "RoleName" | localize }}</th>
                             <th>{{ "DisplayName" | localize }}</th>
                             <th>{{ "RoleDescription" | localize }}</th>
-                            <th>{{ "Company" | localize }}</th>
-                            <th>{{ "Customer" | localize }}</th>
-                            <th>{{ "Department" | localize }}</th>
-                            <th>{{ "Phone" | localize }}</th>
-                            <th>{{ "Email" | localize }}</th>
                             <th>{{ "Actions" | localize }}</th>
                         </tr>
                     </thead>
@@ -72,11 +67,6 @@
                             <td>{{ role.name }}</td>
                             <td>{{ role.displayName }}</td>
                             <td>{{ role.description }}</td>
-                            <td>{{ role.company }}</td>
-                            <td>{{ role.customer }}</td>
-                            <td>{{ role.department }}</td>
-                            <td>{{ role.phone }}</td>
-                            <td>{{ role.email }}</td>
                             <td>
                                 <button class="action-button" mat-icon-button [matMenuTriggerFor]="actionsMenu">
                                     <mat-icon>menu</mat-icon>

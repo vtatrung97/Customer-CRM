@@ -1936,15 +1936,6 @@ export class CreateRoleDto implements ICreateRoleDto {
     isStatic: boolean | undefined;
     permissions: string[] | undefined;
     
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-    
     constructor(data?: ICreateRoleDto) {
         if (data) {
             for (var property in data) {
@@ -1961,15 +1952,6 @@ export class CreateRoleDto implements ICreateRoleDto {
             this.normalizedName = data["normalizedName"];
             this.description = data["description"];
             this.isStatic = data["isStatic"];
-            
-            this.company = data["company"];
-            this.customer = data["customer"];
-            this.department = data["department"];
-            this.phone = data["phone"];
-            this.email = data["email"];
-            this.fax = data["fax"];
-            this.address = data["address"];
-            this.position = data["position"];
             
             if (data["permissions"] && data["permissions"].constructor === Array) {
                 this.permissions = [];
@@ -1993,15 +1975,6 @@ export class CreateRoleDto implements ICreateRoleDto {
         data["normalizedName"] = this.normalizedName;
         data["description"] = this.description;
         data["isStatic"] = this.isStatic;
-        
-        data["company"] = this.company;
-        data["customer"] = this.customer;
-        data["department"] = this.department;
-        data["phone"] = this.phone;
-        data["email"] = this.email;
-        data["fax"] = this.fax;
-        data["address"] = this.address;
-        data["position"] = this.position;
         
         if (this.permissions && this.permissions.constructor === Array) {
             data["permissions"] = [];
@@ -2027,15 +2000,6 @@ export interface ICreateRoleDto {
     isStatic: boolean | undefined;
     permissions: string[] | undefined;
     
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-    
 }
 
 export class RoleDto implements IRoleDto {
@@ -2046,16 +2010,7 @@ export class RoleDto implements IRoleDto {
     isStatic: boolean | undefined;
     permissions: string[] | undefined;
     id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-    
+
     constructor(data?: IRoleDto) {
         if (data) {
             for (var property in data) {
@@ -2072,15 +2027,6 @@ export class RoleDto implements IRoleDto {
             this.normalizedName = data["normalizedName"];
             this.description = data["description"];
             this.isStatic = data["isStatic"];
-             
-             this.company = data["company"];
-             this.customer = data["customer"];
-             this.department = data["department"];
-             this.phone = data["phone"];
-             this.email = data["email"];
-             this.fax = data["fax"];
-             this.address = data["address"];
-             this.position = data["position"];
              
             if (data["permissions"] && data["permissions"].constructor === Array) {
                 this.permissions = [];
@@ -2105,16 +2051,7 @@ export class RoleDto implements IRoleDto {
         data["normalizedName"] = this.normalizedName;
         data["description"] = this.description;
         data["isStatic"] = this.isStatic;
-        
-        data["company"] = this.company;
-        data["customer"] = this.customer;
-        data["department"] = this.department;
-        data["phone"] = this.phone;
-        data["email"] = this.email;
-        data["fax"] = this.fax;
-        data["address"] = this.address;
-        data["position"] = this.position;
-        
+
         if (this.permissions && this.permissions.constructor === Array) {
             data["permissions"] = [];
             for (let item of this.permissions)
@@ -2140,15 +2077,6 @@ export interface IRoleDto {
     isStatic: boolean | undefined;
     permissions: string[] | undefined;
     id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
     
 }
 
@@ -2209,17 +2137,7 @@ export class RoleListDto implements IRoleListDto {
     isStatic: boolean | undefined;
     isDefault: boolean | undefined;
     creationTime: moment.Moment | undefined;
-    id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-    
+    id: number | undefined; 
 
     constructor(data?: IRoleListDto) {
         if (data) {
@@ -2237,17 +2155,7 @@ export class RoleListDto implements IRoleListDto {
             this.isStatic = data["isStatic"];
             this.isDefault = data["isDefault"];
             this.creationTime = data["creationTime"] ? moment(data["creationTime"].toString()) : <any>undefined;
-            this.id = data["id"];
-            
-			this.company = data["company"];
-			this.customer = data["customer"];
-			this.department = data["department"];
-			this.phone = data["phone"];
-			this.email = data["email"];
-			this.fax = data["fax"];
-            this.address = data["address"];
-            this.position = data["position"];
-            
+            this.id = data["id"];          
         }
     }
 
@@ -2266,16 +2174,6 @@ export class RoleListDto implements IRoleListDto {
         data["isDefault"] = this.isDefault;
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["id"] = this.id;
-        
-        data["company"] = this.company;
-        data["customer"] = this.customer;
-        data["department"] = this.department;
-        data["phone"] = this.phone;
-        data["email"] = this.email;
-        data["fax"] = this.fax;
-        data["address"] = this.address;
-        data["position"] = this.position;
-        
         return data; 
     }
 
@@ -2294,18 +2192,8 @@ export interface IRoleListDto {
     isDefault: boolean | undefined;
     creationTime: moment.Moment | undefined;
     id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-    
 }
-
+// edit
 export class ListResultDtoOfPermissionDto implements IListResultDtoOfPermissionDto {
     items: PermissionDto[] | undefined;
 
@@ -2363,15 +2251,6 @@ export class PermissionDto implements IPermissionDto {
     description: string | undefined;
     id: number | undefined;
     
-    company: string | undefined;
-    customer: string | undefined;
-    department: string | undefined;
-    phone: string | undefined;
-    email: string | undefined;
-    fax: string | undefined;
-    address: string | undefined;
-    position: string | undefined;
-    
     constructor(data?: IPermissionDto) {
         if (data) {
             for (var property in data) {
@@ -2386,16 +2265,7 @@ export class PermissionDto implements IPermissionDto {
             this.name = data["name"];
             this.displayName = data["displayName"];
             this.description = data["description"];
-            this.id = data["id"];
-            
-			this.company = data["company"];
-			this.customer = data["customer"];
-			this.department = data["department"];
-			this.phone = data["phone"];
-			this.email = data["email"];
-			this.fax = data["fax"];
-			this.address = data["address"];
-			
+            this.id = data["id"];			
         }
     }
 
@@ -2413,15 +2283,6 @@ export class PermissionDto implements IPermissionDto {
         data["description"] = this.description;
         data["id"] = this.id;
          
-         data["company"] = this.company;
-         data["customer"] = this.customer;
-         data["department"] = this.department;
-         data["phone"] = this.phone;
-         data["email"] = this.email;
-         data["fax"] = this.fax;
-         data["address"] = this.address;
-         data["position"] = this.position;
-         
         return data; 
     }
 
@@ -2438,16 +2299,6 @@ export interface IPermissionDto {
     displayName: string | undefined;
     description: string | undefined;
     id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-	
 }
 
 export class GetRoleForEditOutput implements IGetRoleForEditOutput {
@@ -2523,16 +2374,6 @@ export class RoleEditDto implements IRoleEditDto {
     description: string | undefined;
     isStatic: boolean | undefined;
     id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-	
     constructor(data?: IRoleEditDto) {
         if (data) {
             for (var property in data) {
@@ -2549,15 +2390,6 @@ export class RoleEditDto implements IRoleEditDto {
             this.description = data["description"];
             this.isStatic = data["isStatic"];
             this.id = data["id"];
-            
-			this.company = data["company"];
-			this.customer = data["customer"];
-			this.department = data["department"];
-			this.phone = data["phone"];
-			this.email = data["email"];
-			this.fax = data["fax"];
-			this.address = data["address"];
-			
         }
     }
 
@@ -2575,16 +2407,6 @@ export class RoleEditDto implements IRoleEditDto {
         data["description"] = this.description;
         data["isStatic"] = this.isStatic;
         data["id"] = this.id;
-         
-         data["company"] = this.company;
-         data["customer"] = this.customer;
-         data["department"] = this.department;
-         data["phone"] = this.phone;
-         data["email"] = this.email;
-         data["fax"] = this.fax;
-         data["address"] = this.address;
-         data["position"] = this.position;
-         
         return data; 
     }
 
@@ -2601,33 +2423,13 @@ export interface IRoleEditDto {
     displayName: string;
     description: string | undefined;
     isStatic: boolean | undefined;
-    id: number | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-	
+    id: number | undefined;	
 }
 
 export class FlatPermissionDto implements IFlatPermissionDto {
     name: string | undefined;
     displayName: string | undefined;
     description: string | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-	
 
     constructor(data?: IFlatPermissionDto) {
         if (data) {
@@ -2643,15 +2445,6 @@ export class FlatPermissionDto implements IFlatPermissionDto {
             this.name = data["name"];
             this.displayName = data["displayName"];
             this.description = data["description"];
-            
-			this.company = data["company"];
-			this.customer = data["customer"];
-			this.department = data["department"];
-			this.phone = data["phone"];
-			this.email = data["email"];
-			this.fax = data["fax"];
-			this.address = data["address"];
-			
         }
     }
 
@@ -2667,16 +2460,6 @@ export class FlatPermissionDto implements IFlatPermissionDto {
         data["name"] = this.name;
         data["displayName"] = this.displayName;
         data["description"] = this.description;
-         
-         data["company"] = this.company;
-         data["customer"] = this.customer;
-         data["department"] = this.department;
-         data["phone"] = this.phone;
-         data["email"] = this.email;
-         data["fax"] = this.fax;
-         data["address"] = this.address;
-         data["position"] = this.position;
-         
         return data; 
     }
 
@@ -2692,16 +2475,6 @@ export interface IFlatPermissionDto {
     name: string | undefined;
     displayName: string | undefined;
     description: string | undefined;
-    
-    company: string;
-    customer: string;
-    department: string;
-    phone: string;
-    email: string;
-    fax: string;
-    address: string;
-    position: string;
-	
 }
 
 export class PagedResultDtoOfRoleDto implements IPagedResultDtoOfRoleDto {

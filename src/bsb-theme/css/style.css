@@ -1914,7 +1914,8 @@ a{cursor: pointer;
   margin-bottom: 15px; }
   .block-header h2 {
     margin: 0 !important;
-    color: #666 !important;
+    /* color: #666 !important; */
+    color: white;
     font-weight: normal;
     font-size: 16px; }
     .block-header h2 small {
@@ -3060,7 +3061,8 @@ section.content {
   .card .body {
     font-size: 14px;
     color: #555;
-    padding: 20px; }
+    /* padding: 20px; */
+   }
     .card .body .col-xs-1,
     .card .body .col-sm-1,
     .card .body .col-md-1,
@@ -8405,3 +8407,9 @@ a.bell-icons{
   display: block !important;
 }
 /* dialog ===================== */
+/* customer ===================== */
+.back-no{
+  background:none;
+  box-shadow: none;
+}
+/* customer ===================== */
