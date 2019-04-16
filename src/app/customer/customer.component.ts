@@ -12,6 +12,7 @@ import {
     PagedResultDtoOfCustomerDto
 } from '@shared/service-proxies/customerservice-proxy';
 import { CreateCustomerDialogComponent } from './create-customer/create-customer-dialog.component';
+import { DetailCustomerDialogComponent } from './detail-customer/detail-customer-dialog.component';
 import { EditCustomerDialogComponent } from './edit-customer/edit-customer-dialog.component';
 
 class PagedCustomersRequestDto extends PagedRequestDto {
@@ -31,6 +32,8 @@ class PagedCustomersRequestDto extends PagedRequestDto {
   ]
 })
 export class CustomersComponent extends PagedListingComponentBase<CustomerDto> {
+
+    
   customers: CustomerDto[] = [];
   keyword = '';
   isActive: boolean | null;
@@ -86,11 +89,15 @@ export class CustomersComponent extends PagedListingComponentBase<CustomerDto> {
 
   createCustomer(): void {
       this.showCreateOrEditCustomerDialog();
+      this.showCreateOrDetailCustomerDialog();
   }
 
   editCustomer(customer: CustomerDto): void {
       this.showCreateOrEditCustomerDialog(customer.id);
   }
+  detailCustomer(customer: CustomerDto): void {
+    this.showCreateOrDetailCustomerDialog(customer.id);
+    }
 
   showCreateOrEditCustomerDialog(id?: number): void {
       let createOrEditCustomerDialog;
@@ -108,5 +115,21 @@ export class CustomersComponent extends PagedListingComponentBase<CustomerDto> {
           }
       });
   }
+  showCreateOrDetailCustomerDialog(id?: number): void {
+    let createOrDetailCustomerDialog;
+    if (id === undefined || id <= 0) {
+        createOrDetailCustomerDialog = this._dialog.open(CreateCustomerDialogComponent);
+    } else {
+        createOrDetailCustomerDialog = this._dialog.open(DetailCustomerDialogComponent, {
+            data: id
+        });
+    }
+
+    createOrDetailCustomerDialog.afterClosed().subscribe(result => {
+        if (result) {
+            this.refresh();
+        }
+    });
+}
 }
 

@@ -12,7 +12,7 @@ import { AgridComponent } from './agrid/agrid.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { AddCustomersComponent } from './add-customers/add-customers.component';
 import { CustomersComponent } from './customer/customer.component';
-
+import { ProjectComponent } from './project/project.component';
 @NgModule({
     imports: [
         RouterModule.forChild([
@@ -28,6 +28,7 @@ import { CustomersComponent } from './customer/customer.component';
                     { path: 'data-table', component: DataTableComponent },
                     { path: 'add-customers', component: AddCustomersComponent },
                     { path: 'customer', component: CustomersComponent },
+                    { path: 'project', component: ProjectComponent },
                     { path: 'agrid', component: AgridComponent },
                     { path: 'update-password', component: ChangePasswordComponent }
                 ]

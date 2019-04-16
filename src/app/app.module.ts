@@ -43,13 +43,18 @@ import { AgGridModule } from 'ag-grid-angular';
 import { TestComponent } from './test/test.component';
 // infor
 import { DataTableComponent } from './data-table/data-table.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 // dialog
 import { AddCustomersComponent } from './add-customers/add-customers.component';
 import { DialogOverviewExampleDialog } from './add-customers/add-customers.component';
+// customer
 import { CustomersComponent } from './customer/customer.component';
 import { CreateCustomerDialogComponent } from './customer/create-customer/create-customer-dialog.component';
+import { DetailCustomerDialogComponent } from './customer/detail-customer/detail-customer-dialog.component';
 import { EditCustomerDialogComponent } from './customer/edit-customer/edit-customer-dialog.component';
+// Project
+import { ProjectComponent } from './project/project.component';
+import { CreateProjectDialogComponent } from './project/create-project/create-project-dialog.component';
+import { EditProjectDialogComponent } from './project/edit-project/edit-project-dialog.component';
 
 @NgModule({
   declarations: [
@@ -81,11 +86,17 @@ import { EditCustomerDialogComponent } from './customer/edit-customer/edit-custo
     TestComponent,
     AddCustomersComponent,
     DataTableComponent,
-    CustomersDetailComponent,
     [AddCustomersComponent, DialogOverviewExampleDialog],
+    // customer
     CustomersComponent,
     CreateCustomerDialogComponent,
-    EditCustomerDialogComponent
+    DetailCustomerDialogComponent,
+    EditCustomerDialogComponent,
+    // project
+    ProjectComponent,
+    CreateProjectDialogComponent,
+    EditProjectDialogComponent,
+
   ],
   imports: [
     CommonModule,
@@ -100,9 +111,7 @@ import { EditCustomerDialogComponent } from './customer/edit-customer/edit-custo
     SharedModule,
     NgxPaginationModule,
     // do
-    AgGridModule.withComponents([null]),
-    // validate
-    ReactiveFormsModule
+    AgGridModule.withComponents([null])
   ],
   providers: [],
   entryComponents: [
@@ -118,7 +127,11 @@ import { EditCustomerDialogComponent } from './customer/edit-customer/edit-custo
     ResetPasswordDialogComponent,
     // customer
     CreateCustomerDialogComponent,
+    DetailCustomerDialogComponent,
     EditCustomerDialogComponent,
+    // project
+    CreateProjectDialogComponent,
+    EditProjectDialogComponent,
     // agrid
     [AddCustomersComponent, DialogOverviewExampleDialog]
   ]
